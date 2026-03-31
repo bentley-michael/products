@@ -249,6 +249,50 @@ img, iframe {
   padding: 70px 0;
 }
 
+.missed-check {
+  background: var(--light);
+  padding: 70px 0;
+}
+
+.missed-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: center;
+}
+
+.check-list {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+.missed-check-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.missed-check-card .muted {
+  color: var(--medium);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
 .pain-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
