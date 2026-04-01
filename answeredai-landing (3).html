@@ -351,47 +351,6 @@
     font-size: 14px;
   }
 
-  .priority-badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .priority-high,
-  .priority-medium,
-  .priority-low {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 10px;
-    border-radius: 999px;
-    border: 1px solid;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .priority-high {
-    background: rgba(127, 29, 29, 0.45);
-    border-color: rgba(252, 165, 165, 0.5);
-    color: #fecaca;
-  }
-
-  .priority-medium {
-    background: rgba(120, 53, 15, 0.45);
-    border-color: rgba(253, 230, 138, 0.42);
-    color: #fde68a;
-  }
-
-  .priority-low {
-    background: rgba(20, 83, 45, 0.45);
-    border-color: rgba(134, 239, 172, 0.42);
-    color: #bbf7d0;
-  }
-
   /* STATS BAR */
   .stats-bar {
     background: var(--off-black);
@@ -717,10 +676,6 @@
     text-decoration: underline;
   }
 
-  .copy-email {
-    cursor: pointer;
-  }
-
   .copy-toast {
     display: inline-block;
     margin-left: 6px;
@@ -855,22 +810,11 @@
     color: var(--green-light);
     text-decoration: none;
     font-size: 14px;
-    display: inline-block;
-  }
-
-  .footer-contact-email:hover { text-decoration: underline; }
-
-  .footer-contact-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
+    display: block;
     margin-bottom: 8px;
   }
 
-  .footer-contact-row .copy-toast {
-    margin-left: 8px;
-  }
+  .footer-contact-email:hover { text-decoration: underline; }
 
   .footer-contact-service {
     font-size: 13px;
@@ -969,7 +913,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           Book a Free 10-Minute Demo
         </a>
-        <a href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener" class="btn-secondary">Already ready? Get set up today</a>
+        <a href="#pricing" class="btn-secondary">Already ready? Get set up today</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item">
@@ -1007,11 +951,6 @@
         <div class="card-feature-text">
           <strong>Urgency level</strong>
           Active flooding flagged as emergency
-          <div class="priority-badge-row" aria-label="Priority examples">
-            <span class="priority-high">High Priority</span>
-            <span class="priority-medium">Medium Priority</span>
-            <span class="priority-low">Low Priority</span>
-          </div>
         </div>
       </div>
       <div class="card-feature">
@@ -1186,7 +1125,7 @@
     </article>
     <article id="contact">
       <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Contact</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Email: <a href="#" class="copy-email" data-email="mnbentley@outlook.com" style="color: var(--green-light); text-decoration: none;">mnbentley@outlook.com</a><span class="copy-toast">copied</span></p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Email: <a href="mailto:mnbentley@outlook.com" style="color: var(--green-light); text-decoration: none;">mnbentley@outlook.com</a></p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Serving crawlspace encapsulation contractors across Tennessee and beyond.</p>
     </article>
   </div>
@@ -1217,10 +1156,7 @@
       </div>
       <div>
         <p class="footer-contact-title">Get in touch</p>
-        <div class="footer-contact-row">
-          <a href="#" class="footer-contact-email copy-email" data-email="mnbentley@outlook.com">mnbentley@outlook.com</a>
-          <span class="copy-toast">copied</span>
-        </div>
+        <a href="mailto:mnbentley@outlook.com" class="footer-contact-email">mnbentley@outlook.com</a>
         <p class="footer-contact-service">Serving crawlspace encapsulation contractors across Tennessee and beyond.</p>
       </div>
     </div>
@@ -1239,13 +1175,8 @@
       e.preventDefault();
       var email = this.getAttribute('data-email');
       navigator.clipboard.writeText(email).then(function() {
-        var toast = el.parentElement && el.parentElement.querySelector('.copy-toast');
-        if (!toast) {
-          toast = el.closest('.pricing-demo-note') && el.closest('.pricing-demo-note').querySelector('.copy-toast');
-        }
-        if (!toast) {
-          toast = document.querySelector('.copy-toast');
-        }
+        var toastId = el.closest('.pricing-demo-note') ? 'toast-pricing' : 'toast-footer';
+        var toast = document.getElementById(toastId) || document.querySelector('.copy-toast');
         if (toast) {
           toast.classList.add('show');
           setTimeout(function() { toast.classList.remove('show'); }, 2000);
