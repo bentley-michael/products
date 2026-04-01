@@ -42,7 +42,7 @@
           </div>
           <div class="hero-contact">
             <p><strong>Email for a 10-minute demo:</strong></p>
-            <p><a href="mailto:mnbentley@outlook.com">mnbentley@outlook.com</a></p>
+              <p><span id="emailText">mnbentley@outlook.com</span> <button type="button" id="copyEmailBtn">Copy</button></p>
           </div>
           <div class="trust">
             <span>✓ 30-Day Money-Back Guarantee</span>
@@ -137,6 +137,27 @@
       <p>© 2025 Nathan Bentley. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const emailText = document.getElementById('emailText');
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+
+    if (emailText && copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', async () => {
+        const originalText = copyEmailBtn.textContent;
+
+        try {
+          await navigator.clipboard.writeText(emailText.textContent.trim());
+          copyEmailBtn.textContent = 'Copied!';
+          setTimeout(() => {
+            copyEmailBtn.textContent = originalText;
+          }, 1500);
+        } catch (error) {
+          copyEmailBtn.textContent = originalText;
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
