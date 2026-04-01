@@ -1,163 +1,1122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="LeadLine AI answers missed calls, qualifies leads, and delivers them instantly for crawlspace encapsulation contractors." />
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="LeadLine AI | AI Phone Intake for Crawlspace Encapsulation Contractors" />
-  <meta property="og:description" content="Never miss a lead—24/7 call answering, qualification, and job scheduling for crawlspace encapsulation contractors." />
-  <meta property="og:image" content="https://yourdomain.com/social-preview.png" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LeadLine AI | AI Phone Intake for Crawlspace Encapsulation Contractors" />
-  <meta name="twitter:description" content="Never miss a lead—24/7 call answering, qualification, and job scheduling for crawlspace encapsulation." />
-  <meta name="twitter:image" content="https://yourdomain.com/social-preview.png" />
-  <title>LeadLine AI | AI Phone Intake for Crawlspace Encapsulation Contractors</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnsweredAI — Every Call Answered. Every Lead Captured.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --dark: #1a1a1a;
+    --dark-mid: #222222;
+    --border: #2a2a2a;
+    --border-light: #333333;
+    --amber: #f59e0b;
+    --amber-light: #fcd34d;
+    --amber-dark: #b45309;
+    --green: #16a34a;
+    --green-light: #22c55e;
+    --green-bright: #4ade80;
+    --white: #ffffff;
+    --off-white: #f5f4f0;
+    --muted: #888884;
+    --muted-light: #aaa9a4;
+    --text: #e8e7e3;
+    --text-secondary: #b0afa9;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    width: 32px;
+    height: 32px;
+    background: var(--green);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-logo svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+  }
+
+  .nav-brand-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--white);
+    letter-spacing: -0.3px;
+  }
+
+  .nav-cta {
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+  .nav-cta:hover { background: var(--green-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(22,163,74,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--green-light);
+  }
+
+  .hero-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 84px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-headline .accent {
+    color: var(--amber);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-sub strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: all 0.15s;
+    letter-spacing: -0.2px;
+  }
+
+  .btn-primary:hover {
+    background: var(--green-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.15s;
+    padding: 4px 0;
+  }
+
+  .btn-secondary:hover { color: var(--text); }
+
+  .btn-secondary::after {
+    content: '→';
+    font-size: 14px;
+    transition: transform 0.15s;
+  }
+
+  .btn-secondary:hover::after { transform: translateX(3px); }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .trust-check {
+    width: 14px;
+    height: 14px;
+    background: rgba(22,163,74,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-check::after {
+    content: '✓';
+    font-size: 9px;
+    color: var(--green-light);
+    font-weight: 700;
+  }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--dark);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+  }
+
+  .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .card-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-feature:last-child { border-bottom: none; }
+
+  .card-feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-light);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .card-feature-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .card-feature-text strong {
+    color: var(--text);
+    font-weight: 500;
+    display: block;
+    font-size: 14px;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--off-black);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* SECTION SHARED */
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background: var(--green-light);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* HOW IT WORKS */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 4rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .how-step {
+    background: var(--off-black);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .step-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--border-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .step-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .step-tag {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    background: rgba(22,163,74,0.08);
+    border: 1px solid rgba(22,163,74,0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* VIDEO */
+  .video-section {
+    background: var(--off-black);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .video-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    background: var(--black);
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .pricing-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--dark);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--green-light));
+  }
+
+  .pricing-card-header {
+    padding: 2.5rem 2.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-plan-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .price-dollar {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--muted-light);
+    margin-bottom: 10px;
+  }
+
+  .price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .price-setup {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .price-setup span {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .pricing-features {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  .feature-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(22,163,74,0.15);
+    border: 1px solid rgba(22,163,74,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .feature-check::after {
+    content: '✓';
+    font-size: 10px;
+    color: var(--green-light);
+    font-weight: 700;
+  }
+
+  .feature-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .feature-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .pricing-cta {
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .btn-pricing {
+    display: block;
+    width: 100%;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.15s;
+    margin-bottom: 16px;
+  }
+
+  .btn-pricing:hover {
+    background: var(--green-light);
+    transform: translateY(-1px);
+  }
+
+  .pricing-demo-note {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .pricing-demo-note a {
+    color: var(--green-light);
+    text-decoration: none;
+  }
+
+  .pricing-demo-note a:hover {
+    text-decoration: underline;
+  }
+
+  .pricing-guarantee {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .pricing-secondary-cta {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .pricing-secondary-cta:hover { color: var(--text-secondary); }
+
+  /* FOOTER */
+  footer {
+    background: var(--off-black);
+    border-top: 1px solid var(--border);
+    padding: 3.5rem 2rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-logo {
+    width: 28px;
+    height: 28px;
+    background: var(--green);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .footer-logo svg {
+    width: 14px;
+    height: 14px;
+    fill: white;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-built-by {
+    font-size: 12px;
+    color: var(--border-light);
+  }
+
+  .footer-nav-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-contact-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact-email {
+    color: var(--green-light);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .footer-contact-email:hover { text-decoration: underline; }
+
+  .footer-contact-service {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--border-light);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-card { display: none; }
+
+    .how-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-inner {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-number { font-size: 36px; }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; }
+    .hero { padding: 3rem 1rem; }
+    section { padding: 3.5rem 1rem; }
+    .stats-inner { grid-template-columns: 1fr; text-align: left; }
+    .hero-trust { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+  .hero-headline { animation: fadeUp 0.5s ease 0.1s both; }
+  .hero-sub { animation: fadeUp 0.5s ease 0.2s both; }
+  .hero-cta-group { animation: fadeUp 0.5s ease 0.3s both; }
+  .hero-trust { animation: fadeUp 0.5s ease 0.4s both; }
+  .hero-card { animation: fadeUp 0.5s ease 0.2s both; }
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <nav class="nav" aria-label="Main">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">LL</span>
-        <span class="brand-name">LeadLine AI</span>
-      </div>
-    </nav>
-  </header>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </div>
+    <span class="nav-brand-name">AnsweredAI</span>
+  </a>
+  <a href="mailto:mnbentley@outlook.com?subject=Demo Request - AnsweredAI" class="nav-cta">Book a Demo</a>
+</nav>
 
-  <main id="main">
-    <section class="hero">
-        <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">AI Phone Intake & Lead Generation</p>
-          <h1>AI Phone Intake for Crawlspace Encapsulation Contractors</h1>
-          <p class="subhead">AI answers every call, qualifies the job, and sends you ready-to-book leads instantly — including urgent jobs you should prioritize.</p>
-          <div>
-            <a class="btn btn-primary" data-track="hero-pro" href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener">Get Started</a>
-          </div>
-          <div class="hero-contact">
-            <p><strong>Email for a 10-minute demo:</strong></p>
-              <p><span id="emailText">mnbentley@outlook.com</span> <button type="button" id="copyEmailBtn">Copy</button></p>
-          </div>
-          <div class="trust">
-            <span>✓ 30-Day Money-Back Guarantee</span>
-            <span>✓ Fast Setup</span>
-            <span>✓ No Long-Term Contract</span>
-          </div>
-        </div>
-        <div class="hero-card" aria-label="Summary card">
-          <div class="hero-card-inner">
-            <h2>Never miss a call again</h2>
-            <ul>
-              <li>Captures crawlspace & foundation leads 24/7</li>
-              <li>Filters spam automatically</li>
-              <li>Sends instant SMS/email</li>
-              <li>Flags urgent/high-value jobs so you can respond first</li>
-            </ul>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">AI Phone Intake for Contractors</p>
+      <h1 class="hero-headline">
+        Every Missed Call<br>
+        <span class="accent">Is a Job You<br>Didn't Get</span>
+      </h1>
+      <p class="hero-sub">
+        You're under the house. Your phone rings. No one answers. <strong>That homeowner calls your competitor.</strong>
+        AnsweredAI answers every call, qualifies every lead, and delivers it straight to you — 24 hours a day.
+      </p>
+      <div class="hero-cta-group">
+        <a href="mailto:mnbentley@outlook.com?subject=Demo Request - AnsweredAI" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Book a Free 10-Minute Demo
+        </a>
+        <a href="#pricing" class="btn-secondary">Already ready? Get set up today</a>
       </div>
-    </section>
-
-    <section class="video" id="get-started">
-      <div class="container">
-        <h2>See It In Action</h2>
-        <div class="video-wrap">
-          <iframe
-            title="LeadLine AI demo"
-            src="https://www.loom.com/embed/12f3e330331041a691b1dd29a1fb21e3"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-check"></div>
+          30-day guarantee
         </div>
-      </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-      <div class="container">
-        <h2>Simple, Transparent Pricing</h2>
-        <p class="calc" style="margin-bottom: 16px; font-weight: 600; color: var(--dark);">One flat price. No tiers, no surprises. Built for crawlspace encapsulation contractors.</p>
-        <p class="calc">Start capturing missed high-ticket jobs immediately.</p>
-        <div class="pricing-grid">
-          <div class="card">
-            <span class="badge badge-pop">One Plan</span>
-            <h3>AI Phone Intake System</h3>
-            <p class="price">$297<span>/mo</span></p>
-            <p class="setup">+ $197 one-time setup</p>
-            <ul>
-              <li>24/7 AI call answering</li>
-              <li>Lead qualification (name, phone, address, issue, urgency)</li>
-              <li>Emergency routing (flooding, active water intrusion)</li>
-              <li>Spam call filtering</li>
-              <li>Instant lead delivery (SMS, email, or Google Sheets)</li>
-              <li>Call recording + transcript</li>
-              <li>1 dedicated phone number</li>
-              <li>Custom script built for your services</li>
-            </ul>
-            <div>
-              <a class="btn btn-primary" data-track="pricing-pro" href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener">Get Started</a>
-            </div>
-            <div class="hero-contact">
-              <p><strong>Email for a 10-minute demo:</strong></p>
-              <p><a href="mailto:mnbentley@outlook.com">mnbentley@outlook.com</a></p>
-            </div>
-          </div>
+        <div class="trust-item">
+          <div class="trust-check"></div>
+          No long-term contract
         </div>
-        <p class="calc" style="margin-top: 20px; text-align: center;">Includes a 30-day money-back guarantee. No long-term contract.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand">
-          <span class="brand-mark" aria-hidden="true">LL</span>
-          <span class="brand-name">LeadLine AI</span>
+        <div class="trust-item">
+          <div class="trust-check"></div>
+          Fast setup
         </div>
-        <p>Never miss a crawlspace or foundation lead again.</p>
-        <p>Built by Nathan Bentley</p>
-      </div>
-      <div>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">Terms of Service</a></p>
-        <p><a href="mailto:mnbentley@outlook.com">Contact</a></p>
-      </div>
-      <div>
-        <p>Email: mnbentley@outlook.com</p>
-        <p>Serving crawlspace encapsulation contractors across Tennessee and beyond</p>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>© 2025 Nathan Bentley. All rights reserved.</p>
+    <div class="hero-card">
+      <p class="card-label">What it captures</p>
+      <div class="card-feature">
+        <div class="card-feature-dot"></div>
+        <div class="card-feature-text">
+          <strong>Homeowner name + phone</strong>
+          Every caller logged, no exceptions
+        </div>
+      </div>
+      <div class="card-feature">
+        <div class="card-feature-dot"></div>
+        <div class="card-feature-text">
+          <strong>Address + issue description</strong>
+          Moisture, mold, structural — qualified upfront
+        </div>
+      </div>
+      <div class="card-feature">
+        <div class="card-feature-dot"></div>
+        <div class="card-feature-text">
+          <strong>Urgency level</strong>
+          Active flooding flagged as emergency
+        </div>
+      </div>
+      <div class="card-feature">
+        <div class="card-feature-dot"></div>
+        <div class="card-feature-text">
+          <strong>Delivered instantly</strong>
+          SMS, email, or Google Sheets — your choice
+        </div>
+      </div>
+      <div class="card-feature">
+        <div class="card-feature-dot"></div>
+        <div class="card-feature-text">
+          <strong>Call recording + transcript</strong>
+          Full record, no he-said-she-said
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    const emailText = document.getElementById('emailText');
-    const copyEmailBtn = document.getElementById('copyEmailBtn');
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-number">$4,200</div>
+      <div class="stat-label">Average crawlspace encapsulation job</div>
+    </div>
+    <div>
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Calls answered — nights, weekends, always</div>
+    </div>
+    <div>
+      <div class="stat-number">&lt; 2s</div>
+      <div class="stat-label">Average answer time</div>
+    </div>
+  </div>
+</div>
 
-    if (emailText && copyEmailBtn) {
-      copyEmailBtn.addEventListener('click', async () => {
-        const originalText = copyEmailBtn.textContent;
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <p class="section-eyebrow">How it works</p>
+    <h2 class="section-title">Simple from day one</h2>
+    <p class="section-sub">Built specifically for crawlspace and foundation contractors. No tech experience needed.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <span class="step-number">01</span>
+        <div class="step-title">Homeowner calls</div>
+        <p class="step-body">Your dedicated AnsweredAI number picks up in under 2 seconds. A professional AI agent greets them by your company name and takes over.</p>
+        <span class="step-tag">Always on</span>
+      </div>
+      <div class="how-step">
+        <span class="step-number">02</span>
+        <div class="step-title">Lead is qualified</div>
+        <p class="step-body">The agent collects name, phone, address, issue description, and urgency. Emergency situations like active flooding are flagged and routed immediately.</p>
+        <span class="step-tag">Custom to your services</span>
+      </div>
+      <div class="how-step">
+        <span class="step-number">03</span>
+        <div class="step-title">You get the lead</div>
+        <p class="step-body">Full lead details delivered instantly by SMS or email. Call recording and transcript saved automatically. You follow up when you're ready.</p>
+        <span class="step-tag">Instant delivery</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-        try {
-          await navigator.clipboard.writeText(emailText.textContent.trim());
-          copyEmailBtn.textContent = 'Copied!';
-          setTimeout(() => {
-            copyEmailBtn.textContent = originalText;
-          }, 1500);
-        } catch (error) {
-          copyEmailBtn.textContent = originalText;
-        }
-      });
-    }
-  </script>
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="section-inner">
+    <div class="video-header">
+      <p class="section-eyebrow" style="justify-content: center;">See it in action</p>
+      <h2 class="section-title">Watch a real demo</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">AI-driven emergency lead response for contractors — live walkthrough.</p>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.loom.com/embed/your-loom-id-here"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+        title="AnsweredAI Demo">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="pricing-header">
+      <p class="section-eyebrow" style="justify-content: center;">Pricing</p>
+      <h2 class="section-title">One plan. No surprises.</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">Flat rate built for owner-operated contractors. Start capturing missed jobs immediately.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-card-header">
+        <p class="pricing-plan-name">AI Phone Intake System</p>
+        <div class="pricing-price">
+          <span class="price-dollar">$</span>
+          <span class="price-amount">297</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <p class="price-setup">+ <span>$197</span> one-time setup</p>
+      </div>
+      <div class="pricing-features">
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>24/7 AI call answering</strong> — nights, weekends, on-site, always</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Lead qualification</strong> — name, phone, address, issue, urgency</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Emergency routing</strong> — flooding, active water intrusion flagged immediately</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Spam call filtering</strong> — no junk in your lead list</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Instant lead delivery</strong> — SMS, email, or Google Sheets</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Call recording + transcript</strong> — every conversation saved</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Dedicated phone number</strong> — yours, branded to your business</span>
+        </div>
+        <div class="pricing-feature">
+          <div class="feature-check"></div>
+          <span class="feature-text"><strong>Custom script</strong> — built specifically for your services and market</span>
+        </div>
+      </div>
+      <div class="pricing-cta">
+        <a href="mailto:mnbentley@outlook.com?subject=Demo Request - AnsweredAI" class="btn-pricing">
+          Book a Free 10-Minute Demo
+        </a>
+        <p class="pricing-demo-note">
+          Email: <a href="mailto:mnbentley@outlook.com">mnbentley@outlook.com</a>
+        </p>
+        <a href="YOUR_STRIPE_LINK_HERE" class="pricing-secondary-cta">
+          Already decided? Get set up now →
+        </a>
+      </div>
+    </div>
+    <p class="pricing-guarantee">
+      <span style="color: var(--green-light);">✓</span>
+      30-day money-back guarantee &nbsp;·&nbsp; No long-term contract
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">
+          <div class="footer-logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          AnsweredAI
+        </div>
+        <p class="footer-tagline">Never miss a crawlspace or foundation lead again.</p>
+        <p class="footer-built-by">Built by Nathan Bentley</p>
+      </div>
+      <div>
+        <p class="footer-nav-title">Links</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="mailto:mnbentley@outlook.com">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-contact-title">Get in touch</p>
+        <a href="mailto:mnbentley@outlook.com" class="footer-contact-email">mnbentley@outlook.com</a>
+        <p class="footer-contact-service">Serving crawlspace encapsulation contractors across Tennessee and beyond.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nathan Bentley. All rights reserved.</span>
+      <span>AnsweredAI — Every call answered. Every lead captured.</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
